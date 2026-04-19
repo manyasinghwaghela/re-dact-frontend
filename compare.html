@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compare Documents | RE-DECT</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb4ab",
+                    "on-tertiary-fixed": "#410002",
+                    "on-tertiary-container": "#f63a35",
+                    "on-background": "#121c28",
+                    "primary": "#000000",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#44474c",
+                    "tertiary-fixed": "#ffdad6",
+                    "outline": "#74777d",
+                    "inverse-on-surface": "#eaf1ff",
+                    "inverse-surface": "#27313e",
+                    "outline-variant": "#c4c6cc",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#dfe9fa",
+                    "primary-container": "#001c38",
+                    "background": "#f8f9ff",
+                    "primary-fixed": "#d3e4ff",
+                    "on-secondary-container": "#00714e",
+                    "primary-fixed-dim": "#abc8f4",
+                    "on-secondary-fixed-variant": "#005137",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#6886ae",
+                    "on-secondary-fixed": "#002114",
+                    "surface-container-low": "#eef4ff",
+                    "tertiary-container": "#410002",
+                    "surface-tint": "#426086",
+                    "secondary-fixed-dim": "#68dba9",
+                    "on-primary-fixed": "#001c38",
+                    "secondary-container": "#82f5c1",
+                    "surface": "#f8f9ff",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#abc8f4",
+                    "surface-variant": "#d9e3f4",
+                    "surface-container": "#e5eeff",
+                    "secondary-fixed": "#85f8c4",
+                    "surface-container-highest": "#d9e3f4",
+                    "surface-bright": "#f8f9ff",
+                    "secondary": "#006c4a",
+                    "on-primary-fixed-variant": "#2a486d",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#93000b",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#121c28",
+                    "tertiary": "#000000",
+                    "surface-dim": "#d1dbec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-secondary-container">
+<!-- TopNavBar -->
+<nav class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 flex justify-between items-center w-full px-8 h-16 sticky top-0 z-50 border-b-0 bg-slate-100 dark:bg-slate-900 transition-colors">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white">RE-DECT</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Documents</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Templates</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Security</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Team</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-500 hover:text-slate-900"><span class="material-symbols-outlined">notifications</span></button>
+<button class="p-2 text-slate-500 hover:text-slate-900"><span class="material-symbols-outlined">settings</span></button>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-bold hover:opacity-80 transition-all duration-150">New Redaction</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-variant">
+<img alt="User profile settings" data-alt="professional portrait of a corporate executive in a dark suit with a neutral studio background and soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRJXXKNKHfgO162xnOC0f43MoJyyGY-ilXto8-lVnhUnk7C5j-rD6sZAhjLGIWsv7DMKszu0smKMcdl7usf30NMAbpAvuH8xU4lRPF01JMSj5K882x8HegDkx0BaYtSrhe9QT2zegbg-kc4PsaEIOxCj_VPcUArkNouBKc-hiGjAkkOa5BSheV-iuuftbzH2RoQM3EC28zByEmOOASxPAzpVb3RLCiJQU7CxHq6xO3keeFKCbfmL0wXcpWtpWlf0ob49_Wn_o4lpwW"/>
+</div>
+</div>
+</nav>
+<div class="flex">
+<!-- SideNavBar -->
+<aside class="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-50 flex flex-col h-[calc(100vh-4rem)] sticky top-16 py-8 px-6 gap-y-4 w-80 shrink-0">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<h2 class="text-lg font-bold text-slate-900 dark:text-white font-headline">Precision Vault</h2>
+<p class="text-xs text-slate-500 font-label">Enterprise Tier</p>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-900 dark:text-white font-bold bg-slate-200 dark:bg-slate-800 rounded-lg scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="font-label">Files</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-label">Vault</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label">Activity</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span class="font-label">Support</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-4">
+<div class="bg-surface-container-high p-4 rounded-xl">
+<p class="text-xs font-bold mb-2">Vault Capacity</p>
+<div class="w-full bg-surface-variant h-1.5 rounded-full overflow-hidden mb-2">
+<div class="bg-primary h-full w-[84%]"></div>
+</div>
+<p class="text-[10px] text-slate-500">842.1 GB of 1 TB used</p>
+<button class="mt-3 w-full py-2 bg-primary text-white text-xs font-bold rounded-lg hover:opacity-90">Upgrade Storage</button>
+</div>
+<button class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-error transition-colors">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label">Logout</span>
+</button>
+</div>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-1 bg-surface-container-low p-10 flex flex-col gap-8 h-[calc(100vh-4rem)] overflow-hidden">
+<!-- Header Section -->
+<header class="flex justify-between items-end">
+<div>
+<span class="inline-flex items-center px-3 py-1 bg-secondary-container text-on-secondary-container text-xs font-bold rounded-full mb-4">
+<span class="material-symbols-outlined text-sm mr-1" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                        Integrity Verified: SHA-256 Checksum Passed
+                    </span>
+<h1 class="text-4xl font-extrabold tracking-tight font-headline text-primary">Compare Documents</h1>
+</div>
+<div class="flex gap-4 mb-1">
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container-lowest text-primary font-bold rounded-lg border border-outline-variant/20 hover:bg-white transition-all">
+<span class="material-symbols-outlined">history</span>
+                        Version History
+                    </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-secondary text-white font-bold rounded-lg hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">download</span>
+                        Export Secured
+                    </button>
+</div>
+</header>
+<div class="flex justify-center gap-4 mt-6">
+    <button onclick="showOriginal()" class="px-4 py-2 bg-black text-white rounded">
+        Original
+    </button>
+    <button onclick="showRedacted()" class="px-4 py-2 bg-gray-300 rounded">
+        Redacted
+    </button>
+</div>
+
+<!-- ✅ ADD THIS BELOW -->
+<div class="grid grid-cols-2 gap-8 mt-8">
+    
+    <div class="bg-white p-6 rounded-xl shadow-md">
+        <h2 class="text-xl font-bold mb-4">Original Document</h2>
+        <div class="grid grid-cols-2 gap-6">
+
+    <!-- ORIGINAL -->
+    <div class="bg-white border rounded p-4 h-[400px] overflow-auto">
+        <h2 class="font-bold mb-2 text-gray-700">Original Document</h2>
+        <p>This Agreement is entered into as of October 12, 2024.</p>
+        <p>Client Name: John Doe</p>
+        <p>Phone: +1-555-0199</p>
+        <p>Amount: $245,000</p>
+    </div>
+
+    <!-- REDACTED -->
+    <div class="bg-white border rounded p-4 h-[400px] overflow-auto">
+        <h2 class="font-bold mb-2 text-gray-700">Redacted Document</h2>
+        <p>This Agreement is entered into as of October 12, 2024.</p>
+        <p>Client Name: <span class="bg-black text-black px-2">John Doe</span></p>
+        <p>Phone: <span class="bg-black text-black px-2">+1-555-0199</span></p>
+        <p>Amount: <span class="bg-black text-black px-2">$245,000</span></p>
+    </div>
+
+</div>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl shadow-md">
+        <h2 class="text-xl font-bold mb-4">Redacted Document</h2>
+        <div class="h-[400px] bg-gray-200 flex items-center justify-center rounded">
+            <p class="text-gray-500">Redacted PDF Preview</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="mt-8 text-center">
+    <button class="bg-black text-white px-6 py-3 rounded-lg">
+        Download Redacted File
+    </button>
+</div>
+<!-- Document Panes -->
+<div class="flex-1 flex gap-8 overflow-hidden">
+<!-- Source Identity (Original) -->
+<section class="flex-1 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="px-6 py-4 bg-surface-container-high flex justify-between items-center border-b border-outline-variant/10">
+<span class="text-xs font-black tracking-widest text-on-surface-variant uppercase font-label">Source Identity</span>
+<div class="flex gap-2">
+<span class="text-[10px] bg-white px-2 py-1 rounded font-bold text-slate-500">ORIGINAL_EN_042</span>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-12 no-scrollbar leading-relaxed text-sm text-on-surface">
+<div class="max-w-2xl mx-auto space-y-6 opacity-60">
+<h2 class="text-xl font-bold mb-4 font-headline text-primary">EMPLOYMENT AGREEMENT</h2>
+<p>This Agreement is made as of November 14, 2023, between <span class="bg-tertiary-container/20 px-1 rounded">Alex Sterling</span> (the "Employee") and <span class="bg-tertiary-container/20 px-1 rounded">Global Nexus Corp</span> (the "Employer"), located at <span class="bg-tertiary-container/20 px-1 rounded">1221 Avenue of the Americas, New York, NY 10020</span>.</p>
+<p>The Employee will receive an annual base salary of <span class="bg-tertiary-container/20 px-1 rounded">$185,000.00</span>, payable in accordance with the Employer's standard payroll practices. In addition, the Employee shall be eligible for a performance bonus of up to <span class="bg-tertiary-container/20 px-1 rounded">25%</span>.</p>
+<p>CONFIDENTIALITY: The Employee agrees to maintain the confidentiality of all proprietary information, including but not limited to trade secrets, client lists, and strategic plans related to project <span class="bg-tertiary-container/20 px-1 rounded">"AETHELRED-9"</span>.</p>
+<p>GOVERNING LAW: This Agreement shall be governed by and construed in accordance with the laws of the State of <span class="bg-tertiary-container/20 px-1 rounded">New York</span>.</p>
+<div class="h-64 border-2 border-dashed border-outline-variant/30 flex items-center justify-center bg-slate-50/50 rounded-lg italic text-slate-400">
+                                Signature Area - Page 1 of 12
+                            </div>
+</div>
+</div>
+</section>
+<!-- Secured Output (Redacted) -->
+<section class="flex-1 flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="px-6 py-4 bg-primary text-white flex justify-between items-center">
+<span class="text-xs font-black tracking-widest uppercase font-label">Secured Output</span>
+<div class="flex gap-2">
+<span class="text-[10px] bg-white/20 px-2 py-1 rounded font-bold">REDACTED_SECURE_MODE</span>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-12 no-scrollbar leading-relaxed text-sm text-on-surface">
+<div class="max-w-2xl mx-auto space-y-6">
+<h2 class="text-xl font-bold mb-4 font-headline text-primary">EMPLOYMENT AGREEMENT</h2>
+<p>This Agreement is made as of November 14, 2023, between <span class="bg-primary text-primary px-4 py-0.5 select-none">[REDACTED]</span> (the "Employee") and <span class="bg-primary text-primary px-10 py-0.5 select-none">[REDACTED]</span> (the "Employer"), located at <span class="bg-primary text-primary px-16 py-0.5 select-none">[REDACTED]</span>.</p>
+<p>The Employee will receive an annual base salary of <span class="bg-primary text-primary px-8 py-0.5 select-none">[REDACTED]</span>, payable in accordance with the Employer's standard payroll practices. In addition, the Employee shall be eligible for a performance bonus of up to <span class="bg-primary text-primary px-4 py-0.5 select-none">[REDACTED]</span>.</p>
+<p>CONFIDENTIALITY: The Employee agrees to maintain the confidentiality of all proprietary information, including but not limited to trade secrets, client lists, and strategic plans related to project <span class="bg-primary text-primary px-6 py-0.5 select-none">[REDACTED]</span>.</p>
+<p>GOVERNING LAW: This Agreement shall be governed by and construed in accordance with the laws of the State of <span class="bg-primary text-primary px-4 py-0.5 select-none">[REDACTED]</span>.</p>
+<div class="h-64 border-2 border-dashed border-outline-variant/30 flex items-center justify-center bg-slate-50/50 rounded-lg italic text-slate-400">
+                                Signature Area - Page 1 of 12
+                            </div>
+</div>
+</div>
+</section>
+</div>
+<!-- Summary Section -->
+<footer class="grid grid-cols-4 gap-6">
+<!-- Time Saved Bento -->
+<div class="bg-surface-container-high/50 p-6 rounded-xl flex items-center gap-6">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<div>
+<p class="text-[10px] font-black uppercase tracking-widest text-on-primary-container font-label">Time Saved</p>
+<p class="text-3xl font-extrabold font-headline">42m <span class="text-sm font-normal text-slate-500">avg</span></p>
+</div>
+</div>
+<!-- Confidence Bento -->
+<div class="bg-surface-container-high/50 p-6 rounded-xl flex items-center gap-6">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-secondary shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<div>
+<p class="text-[10px] font-black uppercase tracking-widest text-on-primary-container font-label">Confidence</p>
+<p class="text-3xl font-extrabold font-headline">99.8%</p>
+</div>
+</div>
+<!-- Entity Count Bento -->
+<div class="bg-surface-container-high/50 p-6 rounded-xl flex items-center gap-6">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-tertiary shadow-sm">
+<span class="material-symbols-outlined">data_object</span>
+</div>
+<div>
+<p class="text-[10px] font-black uppercase tracking-widest text-on-primary-container font-label">Entities Protected</p>
+<p class="text-3xl font-extrabold font-headline">14</p>
+</div>
+</div>
+<!-- Status Action Bento -->
+<div class="bg-primary p-6 rounded-xl flex items-center justify-between group cursor-pointer hover:opacity-95 transition-all">
+<div>
+<p class="text-[10px] font-black uppercase tracking-widest text-on-primary-container font-label">Final Step</p>
+<p class="text-xl font-bold font-headline text-white">Approve Redaction</p>
+</div>
+<div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white group-hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</footer>
+</main>
+</div>
+<!-- Floating Actions Container -->
+<div class="fixed bottom-24 right-10 flex flex-col gap-3">
+<button class="w-14 h-14 bg-white shadow-xl rounded-full flex items-center justify-center text-primary hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="w-14 h-14 bg-white shadow-xl rounded-full flex items-center justify-center text-primary hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+<script>
+function showOriginal() {
+    alert("Showing Original Document");
+}
+
+function showRedacted() {
+    alert("Showing Redacted Document");
+}
+</script>
+</body></html>

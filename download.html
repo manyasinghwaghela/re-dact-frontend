@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb4ab",
+                    "on-tertiary-fixed": "#410002",
+                    "on-tertiary-container": "#f63a35",
+                    "on-background": "#121c28",
+                    "primary": "#000000",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#44474c",
+                    "tertiary-fixed": "#ffdad6",
+                    "outline": "#74777d",
+                    "inverse-on-surface": "#eaf1ff",
+                    "inverse-surface": "#27313e",
+                    "outline-variant": "#c4c6cc",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#dfe9fa",
+                    "primary-container": "#001c38",
+                    "background": "#f8f9ff",
+                    "primary-fixed": "#d3e4ff",
+                    "on-secondary-container": "#00714e",
+                    "primary-fixed-dim": "#abc8f4",
+                    "on-secondary-fixed-variant": "#005137",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#6886ae",
+                    "on-secondary-fixed": "#002114",
+                    "surface-container-low": "#eef4ff",
+                    "tertiary-container": "#410002",
+                    "surface-tint": "#426086",
+                    "secondary-fixed-dim": "#68dba9",
+                    "on-primary-fixed": "#001c38",
+                    "secondary-container": "#82f5c1",
+                    "surface": "#f8f9ff",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#abc8f4",
+                    "surface-variant": "#d9e3f4",
+                    "surface-container": "#e5eeff",
+                    "secondary-fixed": "#85f8c4",
+                    "surface-container-highest": "#d9e3f4",
+                    "surface-bright": "#f8f9ff",
+                    "secondary": "#006c4a",
+                    "on-primary-fixed-variant": "#2a486d",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#93000b",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#121c28",
+                    "tertiary": "#000000",
+                    "surface-dim": "#d1dbec"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+        .preview-zoom:hover img {
+            transform: scale(1.05);
+        }
+        .code-glow {
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<div class="flex-1 flex flex-col">
+<!-- TopNavBar -->
+<nav class="flex justify-between items-center w-full px-8 h-16 bg-white border-b border-outline-variant/30 sticky top-0 z-50">
+<div class="text-2xl font-black tracking-tighter text-primary">RE-DECT</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">Documents</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">Templates</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">Security</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors" href="#">Team</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-2 mr-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-2 hover:bg-surface-container rounded-full transition-all">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-2 hover:bg-surface-container rounded-full transition-all">settings</span>
+</div>
+<button class="bg-primary text-on-primary px-5 py-2 rounded-lg font-bold text-sm hover:bg-neutral-800 transition-all">New Redaction</button>
+</div>
+</nav>
+<main class="flex-1 overflow-y-auto px-8 py-10 md:px-16 lg:px-24">
+<div class="max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="flex h-8 w-8 items-center justify-center rounded-full bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="text-secondary font-bold text-xs uppercase tracking-[0.2em]">Processing Complete</span>
+</div>
+<h1 class="text-4xl md:text-6xl font-black tracking-tighter text-on-surface leading-[1.1]">
+                        Document <br class="hidden md:block"/>Finalized.
+                    </h1>
+</div>
+<div class="flex flex-col gap-2 min-w-[320px]">
+<p class="text-on-surface-variant text-sm font-medium mb-2">Ready for secure deployment</p>
+<button class="group relative w-full bg-primary text-on-primary py-5 rounded-xl font-black text-lg flex items-center justify-center gap-4 hover:bg-neutral-800 transition-all shadow-xl shadow-primary/10 overflow-hidden">
+<span class="material-symbols-outlined text-2xl group-hover:-translate-y-1 transition-transform">download</span>
+                        Download Final PDF
+                        <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+</div>
+</div>
+<!-- Main Interactive Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left Column: Interactive Preview -->
+<div class="lg:col-span-7 space-y-6">
+<div class="group relative bg-surface-container-low rounded-2xl p-4 border border-outline-variant/30 transition-all hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/5">
+<div class="preview-zoom relative aspect-[4/5] bg-white overflow-hidden rounded-xl border border-outline-variant/10 cursor-zoom-in">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="a professional document preview with black redaction bars covering sensitive text blocks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ71nRSIKApdpPpYZir_f23rl0ur3g1wtPkXxZL-PlX2f_Q2WpFVzaTtNnDOY9lLTIxnUMf-AQdbm2IzGCc1CU7DVXqqVx9T-y9jp39BfhrToSsqrZ1ppBoICiEXJrRu2h5evwhR0k8xoNJLRfSgo0bKg2UbhcYyw1XduDoGgSiiVohGRH1T6ftX4sgVr0ZeOOqUpr2hxhzGi1P20JGXcQ7OuGZMrmK8jiEVN7iTwvpSV6YI7W1yoUJuHsH_8ZOi2mbwZwKxKkne91"/>
+<!-- Interactive Overlays -->
+<div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors pointer-events-none"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<div class="bg-primary/90 backdrop-blur text-white px-3 py-1.5 rounded-lg text-[10px] font-bold tracking-widest uppercase">Preview Mode</div>
+<div class="bg-secondary text-on-secondary px-3 py-1.5 rounded-lg text-[10px] font-bold tracking-widest uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">verified</span> Encrypted
+                                </div>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+<div class="bg-white/95 backdrop-blur-md p-4 rounded-xl border border-outline-variant/20 shadow-lg">
+<p class="text-[10px] font-bold text-on-surface-variant mb-1 uppercase tracking-tighter">Verified File Identifier</p>
+<p class="font-headline font-black text-on-surface">SEC-COMPLIANCE-2024-REDACTED.pdf</p>
+</div>
+<div class="flex flex-col gap-2">
+<button class="bg-white hover:bg-primary hover:text-white text-on-surface h-10 w-10 rounded-full shadow-lg flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-xl">fullscreen</span>
+</button>
+<button class="bg-white hover:bg-primary hover:text-white text-on-surface h-10 w-10 rounded-full shadow-lg flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-xl">layers</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Bar -->
+<div class="flex flex-wrap items-center gap-4">
+<button class="flex-1 bg-surface-container-high hover:bg-surface-variant text-on-surface px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all border border-outline-variant/10">
+<span class="material-symbols-outlined">add_box</span>
+                            New Project
+                        </button>
+<button class="flex-1 bg-surface-container-high hover:bg-surface-variant text-on-surface px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all border border-outline-variant/10">
+<span class="material-symbols-outlined">share</span>
+                            Share Report
+                        </button>
+<button class="flex-none text-on-tertiary-container hover:bg-error-container/20 px-6 py-4 rounded-xl font-bold flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined">delete_sweep</span>
+                            Purge Original
+                        </button>
+</div>
+</div>
+<!-- Right Column: API Response & Data -->
+<div class="lg:col-span-5 space-y-6">
+<!-- New: API Response Summary Card -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-2xl p-6 code-glow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full -mr-16 -mt-16"></div>
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+<h3 class="text-xs font-bold uppercase tracking-widest opacity-70">API Response: 200 OK</h3>
+</div>
+<span class="text-[10px] font-mono opacity-50 italic">v2.4.1-stable</span>
+</div>
+<div class="font-mono text-[11px] space-y-4">
+<div class="space-y-1">
+<p class="text-secondary-fixed-dim font-bold">// Processing Log</p>
+<div class="grid grid-cols-3 gap-2 border-l-2 border-outline-variant/20 pl-4 py-1">
+<span class="opacity-50">status</span>
+<span class="col-span-2 text-secondary-fixed">"success"</span>
+<span class="opacity-50">id</span>
+<span class="col-span-2">"tr_8829_px_2024"</span>
+<span class="opacity-50">md5</span>
+<span class="col-span-2 truncate">"e99a18c428cb38d5e9d9..."</span>
+<span class="opacity-50">layers</span>
+<span class="col-span-2">4_vector_scrub</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-secondary-fixed-dim font-bold">// Security Headers</p>
+<div class="border-l-2 border-outline-variant/20 pl-4 py-1 space-y-1">
+<p><span class="opacity-50">x-redact-precision:</span> 0.9982</p>
+<p><span class="opacity-50">x-auth-integrity:</span> verified_sha256</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Redaction Breakdown Card -->
+<div class="bg-surface-container-low rounded-2xl p-8 border border-outline-variant/30">
+<h3 class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">analytics</span>
+                            Redaction Intelligence
+                        </h3>
+<div class="space-y-8">
+<div class="flex justify-between items-center group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-on-primary">
+<span class="material-symbols-outlined">person_search</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Personal Names</p>
+<p class="text-xs text-on-surface-variant">PII pattern matched</p>
+</div>
+</div>
+<span class="text-3xl font-black font-headline tracking-tighter">14</span>
+</div>
+<div class="flex justify-between items-center group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-on-primary">
+<span class="material-symbols-outlined">credit_score</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Financial Data</p>
+<p class="text-xs text-on-surface-variant">Encrypted &amp; Masked</p>
+</div>
+</div>
+<span class="text-3xl font-black font-headline tracking-tighter">03</span>
+</div>
+<div class="flex justify-between items-center group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-on-primary">
+<span class="material-symbols-outlined">map</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Geo-Locations</p>
+<p class="text-xs text-on-surface-variant">Metadata stripped</p>
+</div>
+</div>
+<span class="text-3xl font-black font-headline tracking-tighter">08</span>
+</div>
+</div>
+<div class="mt-10 pt-8 border-t border-outline-variant/30">
+<div class="flex justify-between text-sm mb-3">
+<span class="text-on-surface-variant font-medium">System Confidence</span>
+<span class="font-black text-secondary">99.8%</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full w-[99.8%] rounded-full shadow-[0_0_10px_rgba(0,108,74,0.3)]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Stats / Bento Info -->
+<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 hover:border-primary/20 transition-all group">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl mb-6 group-hover:text-primary transition-colors">history_toggle_off</span>
+<h4 class="font-black text-xl mb-3">Auto-Purge</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Original source data scheduled for permanent deletion in <span class="font-bold text-primary">23h 59m</span>.</p>
+</div>
+<div class="bg-secondary-container p-8 rounded-2xl border border-secondary/10 hover:shadow-xl transition-all group">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl mb-6 group-hover:scale-110 transition-transform">verified_user</span>
+<h4 class="font-black text-xl mb-3">Audit Ready</h4>
+<p class="text-sm text-on-secondary-fixed-variant leading-relaxed">Compliance standards met for GDPR, HIPAA, and CCPA digital redaction requirements.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 hover:border-primary/20 transition-all group">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl mb-6 group-hover:text-primary transition-colors">assignment_turned_in</span>
+<h4 class="font-black text-xl mb-3">Report Ready</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">A cryptographic activity log is bundled with the final PDF for your compliance records.</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
